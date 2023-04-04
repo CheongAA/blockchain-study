@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef, useState } from "react";
+import Web3 from "web3";
 
 function App() {
+  const web3 = new Web3(Web3.givenProvider);
+
+  const [account, setAccount] = useState({ address: "", privateKey: "" });
+  const createAccount = () => {
+    const { address, privateKey } = web3.eth.accounts.create();
+    setAccount({ address, privateKey });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <div>
+        <h1>1. 주소 생성</h1>
+        <button type="button" onClick={createAccount}>
+          가져오기
+        </button>
+
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          address: {account.address}
+          <br />
+          pk: {account.privateKey}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
     </div>
   );
 }
