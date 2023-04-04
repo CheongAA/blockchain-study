@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import Web3 from "web3";
+import Counter from "./components/Counter";
+import Counter2 from "./components/Counter2";
 
 function App() {
   const web3 = new Web3(Web3.givenProvider);
@@ -65,6 +67,15 @@ function App() {
         </button>
         <p> address: 0x6433253fd4632ff5c8a5BF4BC93e43c22A194E25</p>
         <p> balance: {balance}</p>
+      </div>
+
+      <div>
+        <h1>4. Contract 배포 및 조회</h1>
+        <h2>Counter v1</h2>
+        <Counter />
+        <br />
+        <h2>Counter v2</h2>
+        <Counter2 />
       </div>
     </div>
   );
