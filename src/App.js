@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import Web3 from "web3";
 import Counter from "./components/Counter";
 import Counter2 from "./components/Counter2";
+import EtherTxForm from "./components/EtherTxForm";
 
 function App() {
   const web3 = new Web3(Web3.givenProvider);
@@ -76,6 +77,11 @@ function App() {
         <br />
         <h2>Counter v2</h2>
         <Counter2 />
+      </div>
+
+      <div>
+        <h1>5. 트랜잭션 전송</h1>
+        <EtherTxForm />
       </div>
     </div>
   );
