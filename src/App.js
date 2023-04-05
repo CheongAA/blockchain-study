@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import Web3 from "web3";
 import Counter from "./components/Counter";
 import Counter2 from "./components/Counter2";
+import ERC20 from "./components/ERC20";
 import EtherTxForm from "./components/EtherTxForm";
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div style={{ padding: 30 }}>
       <div>
         <h1>1. 주소 생성</h1>
         <button type="button" onClick={createAccount}>
@@ -82,6 +83,11 @@ function App() {
       <div>
         <h1>5. 트랜잭션 전송</h1>
         <EtherTxForm />
+      </div>
+
+      <div>
+        <h1>6. ERC20 배포 및 호출</h1>
+        <ERC20 />
       </div>
     </div>
   );
